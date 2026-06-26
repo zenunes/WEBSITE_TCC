@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wireframe Opção 2 – Layout Moderno Centrado em Conversão</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Comic Sans MS', 'Chalkboard SE', cursive; background: #fff; color: #333; font-size: 14px; }
+  .page-title { background: #333; color: #fff; padding: 12px 24px; font-size: 16px; display: flex; align-items: center; gap: 16px; }
+  .page-title span { font-size: 12px; color: #ccc; }
+  .badge-reuse { background: #4CAF50; color: #fff; padding: 2px 7px; border-radius: 3px; font-size: 10px; font-weight: bold; position: absolute; top: -10px; right: -4px; z-index: 10; white-space: nowrap; font-family: Arial, sans-serif; }
+  .badge-new   { background: #FF9800; color: #fff; padding: 2px 7px; border-radius: 3px; font-size: 10px; font-weight: bold; position: absolute; top: -10px; right: -4px; z-index: 10; white-space: nowrap; font-family: Arial, sans-serif; }
+  .rel { position: relative; }
+  section { border-bottom: 2px dashed #ccc; }
+  .box { border: 2px solid #999; background: #f5f5f5; }
+  .img-placeholder { background: #ccc; border: 2px dashed #999; display: flex; align-items: center; justify-content: center; color: #666; font-size: 12px; text-align: center; }
+  .label { font-size: 11px; color: #666; font-family: Arial, sans-serif; }
+  .legend { padding: 16px 24px; background: #f9f9f9; border-top: 2px solid #ccc; font-family: Arial, sans-serif; font-size: 12px; }
+  .legend h4 { margin-bottom: 8px; font-size: 13px; }
+  .legend-item { display: inline-flex; align-items: center; gap: 6px; margin-right: 20px; margin-bottom: 4px; }
+  .dot-green { width: 12px; height: 12px; background: #4CAF50; border-radius: 2px; }
+  .dot-orange { width: 12px; height: 12px; background: #FF9800; border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<div class="page-title">
+  🗂 Wireframe – Opção 2: Layout Moderno Centrado em Conversão
+  <span>Header fixo branco · Hero centralizado · Cards de categorias · CTA de newsletter</span>
+</div>
+
+<!-- ===== STICKY HEADER (NEW) ===== -->
+<!-- NEW COMPONENT: StickyHeader (header fixo com fundo branco + sombra) -->
+<section style="padding:0; border-bottom:2px solid #ddd;" class="rel">
+  <span class="badge-new" style="top:8px; right:8px;">[NEW] StickyHeader</span>
+  <div style="background:#fff; max-width:1140px; margin:auto; height:64px; display:flex; align-items:center; justify-content:space-between; padding:0 16px;">
+    <div class="img-placeholder" style="width:120px; height:38px; background:#ddd; border-color:#ccc;">[ LOGO ]</div>
+    <nav style="display:flex; gap:24px; align-items:center;">
+      <span style="color:#FDAF2D; font-weight:bold; font-size:13px;">Início</span>
+      <span style="font-size:13px; color:#555;">Culinária</span>
+      <span style="font-size:13px; color:#555;">Cultura</span>
+      <span style="font-size:13px; color:#555;">Galeria</span>
+      <div style="background:#333; color:#fff; padding:8px 20px; border-radius:6px; font-size:12px; font-weight:bold;">Explorar →</div>
+    </nav>
+  </div>
+  <div class="label" style="text-align:center; padding:4px; background:#f5f5f5;">Header fixo (position: sticky, top:0) — fundo branco + sombra leve — desaparece em mobile (hamburger)</div>
+</section>
+
+<!-- ===== HERO CENTRADO (NOVO LAYOUT) ===== -->
+<!-- REUSABLE: SliderHero (sliderHero.js) com novo layout de conteúdo centrado -->
+<section style="padding:0; position:relative;" class="rel">
+  <span class="badge-reuse" style="top:8px; right:8px;">[REUSE] SliderHero</span>
+  <div class="img-placeholder" style="height:520px; background:#888; border:none; flex-direction:column; gap:16px; position:relative;">
+    <div style="background:rgba(0,0,0,0.55); width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:32px;">
+      <div style="font-size:11px; color:#FDAF2D; letter-spacing:4px; text-transform:uppercase; font-weight:bold;">Turismo · Cultura · Gastronomia</div>
+      <div style="font-size:26px; font-weight:bold; color:#fff; text-align:center; max-width:560px; line-height:1.3;">Descubra a Autenticidade do <span style="color:#FDAF2D;">Sertão Brasileiro</span></div>
+      <p style="color:#ddd; font-size:13px; text-align:center; max-width:480px; line-height:1.7;">Roteiros, gastronomia e cultura do sertão pernambucano — tudo o que você precisa para uma viagem inesquecível.</p>
+      <!-- Dual CTAs -->
+      <div style="display:flex; gap:16px; margin-top:8px;">
+        <div style="background:#FDAF2D; color:#333; padding:12px 32px; border-radius:6px; font-weight:bold; font-size:13px;">Explorar Destinos</div>
+        <div style="background:transparent; color:#fff; padding:12px 32px; border-radius:6px; font-weight:bold; font-size:13px; border:2px solid #fff;">Ver Galeria</div>
+      </div>
+      <!-- Scroll indicator -->
+      <div style="position:absolute; bottom:16px; color:#fff; font-size:11px; display:flex; flex-direction:column; align-items:center; gap:4px;">
+        <span>↓</span>
+        <span style="font-size:10px; letter-spacing:2px;">ROLAR</span>
+      </div>
+    </div>
+  </div>
+  <div class="label" style="text-align:center; padding:4px; background:#f0f0f0;">Hero com conteúdo centralizado · 2 CTAs (primário + outline) · indicador de scroll</div>
+</section>
+
+<!-- ===== CATEGORY CARDS (NEW) ===== -->
+<!-- NEW COMPONENT: CategoryCards (4 cards com ícone, título, desc, link) -->
+<section style="padding:40px 16px; background:#f5f5f5;" class="rel">
+  <span class="badge-new" style="top:8px; right:8px;">[NEW] CategoryCards</span>
+  <div style="max-width:1140px; margin:auto;">
+    <div style="text-align:center; font-size:13px; color:#999; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px;">O que você encontra aqui</div>
+    <div style="text-align:center; font-size:22px; font-weight:bold; margin-bottom:32px;">Explore Floresta-PE</div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+      <!-- Card Culinária -->
+      <div style="background:#fff; border:2px solid #ddd; border-radius:8px; padding:24px 16px; text-align:center; position:relative;">
+        <div class="img-placeholder" style="width:56px; height:56px; border-radius:50%; margin:0 auto 12px; background:#eee;">🍲</div>
+        <div style="font-weight:bold; margin-bottom:6px;">Culinária</div>
+        <p style="font-size:12px; color:#777; line-height:1.6; margin-bottom:12px;">Sabores únicos do sertão pernambucano</p>
+        <div style="font-size:12px; color:#FDAF2D; font-weight:bold;">Ver mais →</div>
+      </div>
+      <!-- Card Cultura -->
+      <div style="background:#fff; border:2px solid #ddd; border-radius:8px; padding:24px 16px; text-align:center;">
+        <div class="img-placeholder" style="width:56px; height:56px; border-radius:50%; margin:0 auto 12px; background:#eee;">🎭</div>
+        <div style="font-weight:bold; margin-bottom:6px;">Cultura</div>
+        <p style="font-size:12px; color:#777; line-height:1.6; margin-bottom:12px;">Tradições, festas e patrimônio cultural</p>
+        <div style="font-size:12px; color:#FDAF2D; font-weight:bold;">Ver mais →</div>
+      </div>
+      <!-- Card Paisagens -->
+      <div style="background:#fff; border:2px solid #ddd; border-radius:8px; padding:24px 16px; text-align:center;">
+        <div class="img-placeholder" style="width:56px; height:56px; border-radius:50%; margin:0 auto 12px; background:#eee;">🌵</div>
+        <div style="font-weight:bold; margin-bottom:6px;">Paisagens</div>
+        <p style="font-size:12px; color:#777; line-height:1.6; margin-bottom:12px;">Caatinga, sertão e belezas naturais</p>
+        <div style="font-size:12px; color:#FDAF2D; font-weight:bold;">Ver mais →</div>
+      </div>
+      <!-- Card Turismo -->
+      <div style="background:#fff; border:2px solid #ddd; border-radius:8px; padding:24px 16px; text-align:center;">
+        <div class="img-placeholder" style="width:56px; height:56px; border-radius:50%; margin:0 auto 12px; background:#eee;">📍</div>
+        <div style="font-weight:bold; margin-bottom:6px;">Pontos Turísticos</div>
+        <p style="font-size:12px; color:#777; line-height:1.6; margin-bottom:12px;">Arquitetura, fé e história da cidade</p>
+        <div style="font-size:12px; color:#FDAF2D; font-weight:bold;">Ver mais →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEÇÃO DESTAQUES: CULINÁRIA + CULTURA (ALTERNADOS) ===== -->
+<section style="padding:64px 16px; background:#fff;">
+  <div style="max-width:1140px; margin:auto;">
+    <div style="text-align:center; font-size:22px; font-weight:bold; margin-bottom:48px;">Destaques de Floresta-PE</div>
+
+    <!-- Culinária: texto esquerda, imagem direita -->
+    <div style="display:flex; gap:32px; align-items:center; margin-bottom:56px;" class="rel">
+      <span class="badge-reuse" style="top:-10px; right:-4px;">[REUSE] SectionLabel + Trapézio + saiba-mais-btn</span>
+      <div style="flex:1;">
+        <div style="display:inline-block; margin-bottom:16px;">
+          <span style="background:#FDAF2D; color:#333; padding:4px 12px; border-radius:4px; font-size:11px; font-weight:bold; letter-spacing:1px;">CULINÁRIA</span>
+        </div>
+        <div style="font-size:20px; font-weight:bold; margin-bottom:10px;">Geleia de <span style="color:#FDAF2D;">Tamarindo</span></div>
+        <p style="font-size:13px; color:#666; line-height:1.8; margin-bottom:20px;">A culinária de Floresta-PE revela a essência do sertão em cada receita. Dos sabores intensos da carne de sol aos pratos de tradição familiar.</p>
+        <div style="background:#333; color:#fff; display:inline-block; padding:10px 28px; border-radius:6px; font-weight:bold; font-size:13px;">Saiba Mais →</div>
+      </div>
+      <div style="flex:1;">
+        <div class="img-placeholder" style="height:280px; border-radius:8px;">[ Foto: Culinária — comida.jpg ]</div>
+      </div>
+    </div>
+
+    <!-- Cultura: imagem esquerda, texto direita -->
+    <div style="display:flex; gap:32px; align-items:center; flex-direction:row-reverse;" class="rel">
+      <span class="badge-reuse" style="top:-10px; right:-4px;">[REUSE] SectionLabel + Trapézio + saiba-mais-btn</span>
+      <div style="flex:1; text-align:right;">
+        <div style="display:inline-block; margin-bottom:16px;">
+          <span style="background:#FDAF2D; color:#333; padding:4px 12px; border-radius:4px; font-size:11px; font-weight:bold; letter-spacing:1px;">CULTURA</span>
+        </div>
+        <div style="font-size:20px; font-weight:bold; margin-bottom:10px;">Cultura, <span style="color:#FDAF2D;">Tradição</span> e Legado</div>
+        <p style="font-size:13px; color:#666; line-height:1.8; margin-bottom:20px;">Festas populares, música regional, fé e tradições que atravessam gerações. Mergulhe na identidade sertaneja.</p>
+        <div style="background:#333; color:#fff; display:inline-block; padding:10px 28px; border-radius:6px; font-weight:bold; font-size:13px;">Saiba Mais →</div>
+      </div>
+      <div style="flex:1;">
+        <div class="img-placeholder" style="height:280px; border-radius:8px;">[ Foto: Vaquejada — vaqueijada.jpeg ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIA (GRID PREVIEW + LINK) ===== -->
+<!-- NEW COMPONENT: GalleryGridPreview (grid 2x3 de thumbnails + botão Ver Galeria) -->
+<section style="padding:64px 16px; background:#f5f5f5;" class="rel">
+  <span class="badge-new" style="top:8px; right:8px;">[NEW] GalleryGridPreview</span>
+  <div style="max-width:1140px; margin:auto;">
+    <div style="text-align:center; margin-bottom:32px;">
+      <div class="rel" style="display:inline-block; margin-bottom:8px;">
+        <span style="font-weight:800; font-size:18px; letter-spacing:2px;">Paisagem</span>
+        <div style="height:4px; background:#FDAF2D; border-radius:4px; margin-top:4px;"></div>
+      </div>
+      <div style="font-size:20px; font-weight:bold; margin-top:8px;">Explore a <span style="color:#FDAF2D;">Caatinga</span></div>
+    </div>
+    <!-- 6 thumbnail grid -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:24px;">
+      <div class="img-placeholder" style="height:160px; border-radius:6px;">slide1.jpg</div>
+      <div class="img-placeholder" style="height:160px; border-radius:6px;">slide2.jpg</div>
+      <div class="img-placeholder" style="height:160px; border-radius:6px;">casavermelha.png</div>
+      <div class="img-placeholder" style="height:160px; border-radius:6px;">slide4.jpg</div>
+      <div class="img-placeholder" style="height:160px; border-radius:6px;">slide5.jpg</div>
+      <div class="img-placeholder" style="height:160px; border-radius:6px; background:#bbb; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold; font-size:18px;">+6 fotos</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="background:#333; color:#fff; display:inline-block; padding:12px 40px; border-radius:6px; font-weight:bold;">Ver Galeria Completa →</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PONTOS TURÍSTICOS ===== -->
+<section style="padding:64px 16px; background:#fff;" class="rel">
+  <div style="max-width:1140px; margin:auto;">
+    <div style="text-align:center; font-size:22px; font-weight:bold; margin-bottom:8px;">Principais Pontos Turísticos</div>
+    <p style="text-align:center; font-size:13px; color:#666; margin-bottom:40px; max-width:600px; margin-left:auto; margin-right:auto;">Arquitetura histórica, espaços de convivência e templos de fé.</p>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;" class="rel">
+      <span class="badge-reuse" style="top:-10px; right:-4px;">[REUSE] AtracaoCard</span>
+      <div style="border:2px solid #ddd; border-radius:8px; overflow:hidden;">
+        <div class="img-placeholder" style="height:150px;">[ Prefeitura — prefeitura.jpg ]</div>
+        <div style="padding:16px; background:#333; color:#fff;">
+          <div style="font-weight:bold; margin-bottom:6px;">Prefeitura Municipal</div>
+          <p style="font-size:12px; color:#ccc; margin-bottom:12px; line-height:1.6;">Sede administrativa histórica no centro de Floresta-PE.</p>
+          <div style="background:#FDAF2D; color:#333; padding:6px 14px; border-radius:4px; font-size:12px; font-weight:bold; display:inline-block;">📍 Localização</div>
+        </div>
+      </div>
+      <div style="border:2px solid #ddd; border-radius:8px; overflow:hidden;">
+        <div class="img-placeholder" style="height:150px;">[ Igreja — igreja.jpg ]</div>
+        <div style="padding:16px; background:#333; color:#fff;">
+          <div style="font-weight:bold; margin-bottom:6px;">Capela N.S. Aparecida</div>
+          <p style="font-size:12px; color:#ccc; margin-bottom:12px; line-height:1.6;">Templo de fé e devoção para moradores e visitantes.</p>
+          <div style="background:#FDAF2D; color:#333; padding:6px 14px; border-radius:4px; font-size:12px; font-weight:bold; display:inline-block;">📍 Localização</div>
+        </div>
+      </div>
+      <div style="border:2px solid #ddd; border-radius:8px; overflow:hidden;">
+        <div class="img-placeholder" style="height:150px;">[ Praça — praca.jpg ]</div>
+        <div style="padding:16px; background:#333; color:#fff;">
+          <div style="font-weight:bold; margin-bottom:6px;">Praça Antônio Ferraz</div>
+          <p style="font-size:12px; color:#ccc; margin-bottom:12px; line-height:1.6;">Espaço público de lazer e encontro da população.</p>
+          <div style="background:#FDAF2D; color:#333; padding:6px 14px; border-radius:4px; font-size:12px; font-weight:bold; display:inline-block;">📍 Localização</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA STRIP / NEWSLETTER (NEW) ===== -->
+<!-- NEW COMPONENT: NewsletterCTA (faixa com chamada + input de email) -->
+<section style="padding:0;" class="rel">
+  <span class="badge-new" style="top:8px; right:8px;">[NEW] NewsletterCTA</span>
+  <div style="background:#444; padding:48px 16px;">
+    <div style="max-width:640px; margin:auto; text-align:center;">
+      <div style="font-size:22px; font-weight:bold; color:#fff; margin-bottom:8px;">Planeje sua visita a Floresta-PE</div>
+      <p style="font-size:13px; color:#ccc; margin-bottom:24px; line-height:1.7;">Receba dicas de roteiros, gastronomia e cultura diretamente no seu e-mail.</p>
+      <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+        <div style="background:#fff; border:2px solid #ccc; border-radius:6px; padding:10px 20px; min-width:240px; font-size:13px; color:#999;">Seu e-mail aqui...</div>
+        <div style="background:#FDAF2D; color:#333; padding:10px 24px; border-radius:6px; font-weight:bold; font-size:13px;">Inscrever-se</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<!-- REUSABLE: Footer -->
+<section style="padding:0;" class="rel">
+  <span class="badge-reuse" style="top:8px; right:8px;">[REUSE] Footer</span>
+  <div style="background:#222; padding:48px 16px 16px; color:#fff;">
+    <div style="max-width:1140px; margin:auto; display:grid; grid-template-columns:2fr 1fr 1fr; gap:32px; margin-bottom:32px;">
+      <div>
+        <div class="img-placeholder" style="width:110px; height:34px; background:#444; border-color:#555; margin-bottom:12px;">[ LOGO ]</div>
+        <p style="font-size:12px; color:#aaa; line-height:1.7; max-width:280px;">Florestei valoriza o turismo, a cultura e a culinária de Floresta-PE, conectando visitantes às experiências autênticas do sertão.</p>
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <div class="img-placeholder" style="width:24px; height:24px; border-radius:50%; background:#555;">W</div>
+          <div class="img-placeholder" style="width:24px; height:24px; border-radius:50%; background:#555;">F</div>
+          <div class="img-placeholder" style="width:24px; height:24px; border-radius:50%; background:#555;">I</div>
+          <div class="img-placeholder" style="width:24px; height:24px; border-radius:50%; background:#555;">@</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:bold; margin-bottom:10px;">Links Úteis</div>
+        <div style="display:flex; flex-direction:column; gap:6px; font-size:12px; color:#aaa;">
+          <span>Início</span><span>Culinária</span><span>Cultura</span><span>Galeria</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:bold; margin-bottom:10px;">Contato</div>
+        <div style="font-size:12px; color:#aaa; line-height:1.8;">
+          <div>📧 contato@florestei.com</div>
+          <div>📱 WhatsApp</div>
+          <div>📍 Floresta, PE</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid #444; padding-top:12px; text-align:center; font-size:12px; color:#777;">© 2025 Florestei — Todos os direitos reservados.</div>
+  </div>
+</section>
+
+<!-- Back to top -->
+<div class="rel" style="position:fixed; bottom:24px; right:24px;">
+  <span class="badge-reuse" style="top:-10px; right:-4px;">[REUSE] BackToTop</span>
+  <div style="width:44px; height:44px; background:#FDAF2D; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; color:#333; border:2px solid #999;">↑</div>
+</div>
+
+<!-- ===== LEGEND ===== -->
+<div class="legend">
+  <h4>Legenda de Componentes</h4>
+  <div>
+    <span class="legend-item"><span class="dot-green"></span><strong>[REUSE]</strong> Componente reutilizado do código existente</span>
+    <span class="legend-item"><span class="dot-orange"></span><strong>[NEW]</strong> Novo componente a ser criado</span>
+  </div>
+  <div style="margin-top:10px; font-size:11px; color:#555;">
+    <strong>Reutilizados:</strong> SliderHero (sliderHero.js), GallerySlider implícito, BackToTop, SectionLabel, saiba-mais-btn, Trapézio, AtracaoCard, Footer<br>
+    <strong>Novos:</strong> StickyHeader (header fixo branco), CategoryCards (4 cards de categorias), GalleryGridPreview (grid 2x3 de fotos), NewsletterCTA (faixa com input de e-mail)
+  </div>
+</div>
+
+</body>
+</html>
